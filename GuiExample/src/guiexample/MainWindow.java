@@ -35,58 +35,86 @@ public class MainWindow extends javax.swing.JFrame {
     private void initComponents() {
 
         IntroLabel = new javax.swing.JLabel();
-        nameLabel = new javax.swing.JLabel();
-        nameTextField = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        firstNameLabel = new javax.swing.JLabel();
+        firstNameTextField = new javax.swing.JTextField();
+        lastNameLabel = new javax.swing.JLabel();
+        lastNameTextField = new javax.swing.JTextField();
+        cityLabel = new javax.swing.JLabel();
+        cityTextField = new javax.swing.JTextField();
+        stateLabel = new javax.swing.JLabel();
+        stateTextField = new javax.swing.JTextField();
+        phoneNumberLabel = new javax.swing.JLabel();
+        phoneNumberTextField = new javax.swing.JTextField();
+        joinDateLabel = new javax.swing.JLabel();
+        joinDateTextField = new javax.swing.JTextField();
+        dobLabel = new javax.swing.JLabel();
+        dobTextField = new javax.swing.JTextField();
+        customerIdLabel = new javax.swing.JLabel();
+        customerIdTextField = new javax.swing.JTextField();
         okButton = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        deleteButton = new javax.swing.JButton();
+        newButton = new javax.swing.JButton();
+        saveButton = new javax.swing.JButton();
+        nextButton = new javax.swing.JButton();
+        previousButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         IntroLabel.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
         IntroLabel.setText("This is to edit a database.");
 
-        nameLabel.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
-        nameLabel.setText("First Name: ");
+        firstNameLabel.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        firstNameLabel.setText("First Name: ");
 
-        nameTextField.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        firstNameTextField.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
 
-        jLabel1.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
-        jLabel1.setText("Last Name:");
+        lastNameLabel.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        lastNameLabel.setText("Last Name:");
 
-        jLabel2.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
-        jLabel2.setText("City: ");
+        lastNameTextField.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
-        jLabel3.setText("State:");
+        cityLabel.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        cityLabel.setText("City: ");
 
-        jLabel4.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
-        jLabel4.setText("Phone Number");
+        cityTextField.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
 
-        jTextField1.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        stateLabel.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        stateLabel.setText("State:");
 
-        jTextField2.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        stateTextField.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
 
-        jTextField3.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        phoneNumberLabel.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        phoneNumberLabel.setText("Phone Number");
 
-        jTextField4.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        phoneNumberTextField.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        phoneNumberTextField.setText("XXX-XXX-XXXX");
+
+        joinDateLabel.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        joinDateLabel.setText("JoinDate");
+
+        joinDateTextField.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        joinDateTextField.setText("YEAR-MO-DA");
+        joinDateTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                joinDateTextFieldActionPerformed(evt);
+            }
+        });
+
+        dobLabel.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        dobLabel.setText("DOB");
+
+        dobTextField.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        dobTextField.setText("YEAR-MO-DA");
+        dobTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dobTextFieldActionPerformed(evt);
+            }
+        });
+
+        customerIdLabel.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        customerIdLabel.setText("CustomerID: ");
+
+        customerIdTextField.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
 
         okButton.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
         okButton.setText("OK");
@@ -96,47 +124,20 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
-        jLabel5.setText("JoinDate");
+        deleteButton.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        deleteButton.setText("Delete Record");
 
-        jLabel6.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
-        jLabel6.setText("DOB");
+        newButton.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        newButton.setText("New Record");
 
-        jTextField5.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
-        jTextField5.setText("YEAR-MO-DA");
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
-            }
-        });
+        saveButton.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        saveButton.setText("Save Changes");
 
-        jTextField6.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
-        jTextField6.setText("YEAR-MO-DA");
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });
+        nextButton.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        nextButton.setText("Next Record");
 
-        jLabel8.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
-        jLabel8.setText("CustomerID: ");
-
-        jTextField8.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
-
-        jButton1.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
-        jButton1.setText("Delete Record");
-
-        jButton2.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
-        jButton2.setText("New Record");
-
-        jButton3.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
-        jButton3.setText("Save Changes");
-
-        jButton4.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
-        jButton4.setText("Next Record");
-
-        jButton5.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
-        jButton5.setText("Previous Record");
+        previousButton.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        previousButton.setText("Previous Record");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -148,55 +149,55 @@ public class MainWindow extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel2)
+                                .addComponent(cityLabel)
                                 .addGap(61, 61, 61)
-                                .addComponent(jTextField2))
+                                .addComponent(cityTextField))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(nameLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel8))
+                                    .addComponent(lastNameLabel)
+                                    .addComponent(firstNameLabel, javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(customerIdLabel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
-                                    .addComponent(jTextField1)
-                                    .addComponent(nameTextField))))
+                                    .addComponent(customerIdTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
+                                    .addComponent(lastNameTextField)
+                                    .addComponent(firstNameTextField))))
                         .addGap(12, 12, 12)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(1, 1, 1)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(IntroLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton1)
+                                .addComponent(deleteButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton2))
+                                .addComponent(newButton))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLabel5)
+                                        .addComponent(joinDateLabel)
                                         .addGap(43, 43, 43))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel6)
+                                        .addComponent(dobLabel)
                                         .addGap(69, 69, 69)))
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jTextField6)
-                                    .addComponent(jTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
+                                    .addComponent(dobTextField)
+                                    .addComponent(joinDateTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(okButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton5)
+                                .addComponent(previousButton)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton4))
+                                .addComponent(nextButton))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel3))
+                                    .addComponent(phoneNumberLabel)
+                                    .addComponent(stateLabel))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jTextField3)
-                                    .addComponent(jTextField4))))))
+                                    .addComponent(stateTextField)
+                                    .addComponent(phoneNumberTextField))))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -208,50 +209,50 @@ public class MainWindow extends javax.swing.JFrame {
                         .addComponent(IntroLabel)
                         .addGap(5, 5, 5)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(jTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(customerIdLabel)
+                            .addComponent(customerIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nameLabel)
-                            .addComponent(nameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(firstNameLabel)
+                            .addComponent(firstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton2)
-                            .addComponent(jButton1))
+                            .addComponent(newButton)
+                            .addComponent(deleteButton))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(lastNameLabel)
+                            .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cityLabel)
+                            .addComponent(cityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(stateLabel)
+                            .addComponent(stateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(phoneNumberLabel)
+                            .addComponent(phoneNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(joinDateLabel)
+                            .addComponent(joinDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel6)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(dobLabel)
+                            .addComponent(dobTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 218, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton4)
-                            .addComponent(jButton5)
+                            .addComponent(nextButton)
+                            .addComponent(previousButton)
                             .addComponent(okButton))
                         .addContainerGap())))
         );
@@ -260,18 +261,18 @@ public class MainWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void okButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_okButtonActionPerformed
-        String msg = "Hello, " + nameTextField.getText();
+        String msg = "Hello, " + firstNameTextField.getText();
   
         JOptionPane.showMessageDialog(this, msg);
     }//GEN-LAST:event_okButtonActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void dobTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dobTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_dobTextFieldActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void joinDateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_joinDateTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_joinDateTextFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -310,27 +311,27 @@ public class MainWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel IntroLabel;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField8;
-    private javax.swing.JLabel nameLabel;
-    private javax.swing.JTextField nameTextField;
+    private javax.swing.JLabel cityLabel;
+    private javax.swing.JTextField cityTextField;
+    private javax.swing.JLabel customerIdLabel;
+    private javax.swing.JTextField customerIdTextField;
+    private javax.swing.JButton deleteButton;
+    private javax.swing.JLabel dobLabel;
+    private javax.swing.JTextField dobTextField;
+    private javax.swing.JLabel firstNameLabel;
+    private javax.swing.JTextField firstNameTextField;
+    private javax.swing.JLabel joinDateLabel;
+    private javax.swing.JTextField joinDateTextField;
+    private javax.swing.JLabel lastNameLabel;
+    private javax.swing.JTextField lastNameTextField;
+    private javax.swing.JButton newButton;
+    private javax.swing.JButton nextButton;
     private javax.swing.JButton okButton;
+    private javax.swing.JLabel phoneNumberLabel;
+    private javax.swing.JTextField phoneNumberTextField;
+    private javax.swing.JButton previousButton;
+    private javax.swing.JButton saveButton;
+    private javax.swing.JLabel stateLabel;
+    private javax.swing.JTextField stateTextField;
     // End of variables declaration//GEN-END:variables
 }

@@ -29,26 +29,26 @@
                   <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <Component id="cityLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="61" max="-2" attributes="0"/>
-                              <Component id="jTextField2" max="32767" attributes="0"/>
+                              <Component id="cityTextField" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="nameLabel" alignment="1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lastNameLabel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="firstNameLabel" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="customerIdLabel" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace pref="54" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jTextField8" pref="249" max="32767" attributes="0"/>
-                                  <Component id="jTextField1" max="32767" attributes="0"/>
-                                  <Component id="nameTextField" max="32767" attributes="0"/>
+                                  <Component id="customerIdTextField" pref="249" max="32767" attributes="0"/>
+                                  <Component id="lastNameTextField" max="32767" attributes="0"/>
+                                  <Component id="firstNameTextField" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                      <Component id="jButton3" min="-2" pref="255" max="-2" attributes="0"/>
+                      <Component id="saveButton" min="-2" pref="255" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
@@ -56,41 +56,41 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="IntroLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                              <Component id="deleteButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                              <Component id="newButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                                      <Component id="joinDateLabel" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
+                                      <Component id="dobLabel" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jTextField6" max="32767" attributes="0"/>
-                                  <Component id="jTextField5" pref="152" max="32767" attributes="0"/>
+                                  <Component id="dobTextField" max="32767" attributes="0"/>
+                                  <Component id="joinDateTextField" pref="152" max="32767" attributes="0"/>
                               </Group>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="okButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton5" min="-2" max="-2" attributes="0"/>
+                              <Component id="previousButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jButton4" min="-2" max="-2" attributes="0"/>
+                              <Component id="nextButton" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="phoneNumberLabel" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="stateLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="jTextField3" max="32767" attributes="0"/>
-                                  <Component id="jTextField4" max="32767" attributes="0"/>
+                                  <Component id="stateTextField" max="32767" attributes="0"/>
+                                  <Component id="phoneNumberTextField" max="32767" attributes="0"/>
                               </Group>
                           </Group>
                       </Group>
@@ -109,63 +109,63 @@
                       <Component id="IntroLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField8" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="customerIdLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="customerIdTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="nameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="nameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="firstNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="firstNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="newButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="deleteButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jButton3" min="-2" pref="51" max="-2" attributes="0"/>
+                      <Component id="saveButton" min="-2" pref="51" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lastNameLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lastNameTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cityLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="cityTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="stateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="stateTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="phoneNumberLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="phoneNumberTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="joinDateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="joinDateTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField6" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="dobLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="dobTextField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="218" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton4" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="nextButton" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="previousButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="okButton" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -184,7 +184,7 @@
         <Property name="text" type="java.lang.String" value="This is to edit a database."/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="nameLabel">
+    <Component class="javax.swing.JLabel" name="firstNameLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Console" size="14" style="0"/>
@@ -192,14 +192,14 @@
         <Property name="text" type="java.lang.String" value="First Name: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="nameTextField">
+    <Component class="javax.swing.JTextField" name="firstNameTextField">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Console" size="14" style="0"/>
         </Property>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="lastNameLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Console" size="14" style="0"/>
@@ -207,7 +207,14 @@
         <Property name="text" type="java.lang.String" value="Last Name:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JTextField" name="lastNameTextField">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Lucida Console" size="14" style="0"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="cityLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Console" size="14" style="0"/>
@@ -215,7 +222,14 @@
         <Property name="text" type="java.lang.String" value="City: "/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel3">
+    <Component class="javax.swing.JTextField" name="cityTextField">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Lucida Console" size="14" style="0"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="stateLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Console" size="14" style="0"/>
@@ -223,7 +237,14 @@
         <Property name="text" type="java.lang.String" value="State:"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel4">
+    <Component class="javax.swing.JTextField" name="stateTextField">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Lucida Console" size="14" style="0"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="phoneNumberLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Console" size="14" style="0"/>
@@ -231,28 +252,61 @@
         <Property name="text" type="java.lang.String" value="Phone Number"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField1">
+    <Component class="javax.swing.JTextField" name="phoneNumberTextField">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Console" size="14" style="0"/>
         </Property>
+        <Property name="text" type="java.lang.String" value="XXX-XXX-XXXX"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField2">
+    <Component class="javax.swing.JLabel" name="joinDateLabel">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Console" size="14" style="0"/>
         </Property>
+        <Property name="text" type="java.lang.String" value="JoinDate"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField3">
+    <Component class="javax.swing.JTextField" name="joinDateTextField">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Console" size="14" style="0"/>
         </Property>
+        <Property name="text" type="java.lang.String" value="YEAR-MO-DA"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="joinDateTextFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="dobLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Lucida Console" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="DOB"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
+    <Component class="javax.swing.JTextField" name="dobTextField">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Lucida Console" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="YEAR-MO-DA"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="dobTextFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="customerIdLabel">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Lucida Console" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="CustomerID: "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="customerIdTextField">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Console" size="14" style="0"/>
@@ -270,60 +324,7 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="okButtonActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel5">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Lucida Console" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="JoinDate"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel6">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Lucida Console" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="DOB"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField5">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Lucida Console" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="YEAR-MO-DA"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField5ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField6">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Lucida Console" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="YEAR-MO-DA"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField6ActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JLabel" name="jLabel8">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Lucida Console" size="14" style="0"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="CustomerID: "/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="jTextField8">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Lucida Console" size="14" style="0"/>
-        </Property>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="deleteButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Console" size="14" style="0"/>
@@ -331,7 +332,7 @@
         <Property name="text" type="java.lang.String" value="Delete Record"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="newButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Console" size="14" style="0"/>
@@ -339,7 +340,7 @@
         <Property name="text" type="java.lang.String" value="New Record"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="saveButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Console" size="14" style="0"/>
@@ -347,7 +348,7 @@
         <Property name="text" type="java.lang.String" value="Save Changes"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton4">
+    <Component class="javax.swing.JButton" name="nextButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Console" size="14" style="0"/>
@@ -355,7 +356,7 @@
         <Property name="text" type="java.lang.String" value="Next Record"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton5">
+    <Component class="javax.swing.JButton" name="previousButton">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Lucida Console" size="14" style="0"/>

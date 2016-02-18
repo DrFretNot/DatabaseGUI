@@ -4,3 +4,19 @@ COMMIT
 /*C2*/SET SCHEMA PUBLIC
 CREATE TABLE Course (\u000a  CourseID DECIMAL(5,0),\u000a  Year INT,\u000a  Semester CHAR(2),\u000a  Department VARCHAR(4),\u000a  CourseNumbre DECIMAL(3,0),\u000a  SectionNumber INT,\u000a  MaxSeats INT\u000a)
 ALTER TABLE Course\u000aALTER COLUMN CourseNumbre\u000aRENAME TO CourseNumber
+ALTER TABLE Course\u000aADD COLUMN RoomNumber INT
+ALTER TABLE Course\u000aDROP COLUMN RoomNumber
+INSERT INTO COURSE VALUES(10000,2016,'SP','CS',412,1,10)
+COMMIT
+ALTER TABLE Course\u000aADD COLUMN CourseName VARCHAR(100)\u000a
+DELETE FROM COURSE WHERE COURSEID=10000 AND YEAR=2016 AND SEMESTER='SP' AND DEPARTMENT='CS' AND COURSENUMBER=412 AND SECTIONNUMBER=1 AND MAXSEATS=10 AND COURSENAME IS NULL
+INSERT INTO COURSE VALUES(10000,2016,'SP','CS',412,1,10,'Advanced Pokemon Training')
+COMMIT
+ALTER TABLE Course \u000aADD COLUMN CourseDescription VARCHAR(500) DEFAULT 'Description not set.'
+Drop Table Course
+CREATE TABLE Course (\u000a  CourseID DECIMAL(5,0),\u000a  Year INT,\u000a  Semester CHAR(2),\u000a  Department VARCHAR(4),\u000a  CourseNumbre DECIMAL(3,0),\u000a  SectionNumber INT,\u000a  CourseName VARCHAR(50) DEFAULT 'Unnamed Course.',\u000a  CourseDescription VARCHAR(500) DEFAULT 'Description not set.',\u000a  MaxSeats INT\u000a)
+Drop Table Course
+CREATE TABLE Course (\u000a  CourseID DECIMAL(5,0) NOT NULL,\u000a  Year INT NOT NULL,\u000a  Semester CHAR(2) NOT NULL,\u000a  Department VARCHAR(4) NOT NULL,\u000a  CourseNumber DECIMAL(3,0) NOT NULL,\u000a  SectionNumber INT,\u000a  CourseName VARCHAR(50) DEFAULT 'Unnamed Course.',\u000a  CourseDescription VARCHAR(500) DEFAULT 'Description not set.',\u000a  MaxSeats INT\u000a)
+INSERT INTO COURSE VALUES(10000,2016,'SP','CS',412,NULL,'Unnamed Course.','Description not set.',NULL)
+COMMIT
+DISCONNECT

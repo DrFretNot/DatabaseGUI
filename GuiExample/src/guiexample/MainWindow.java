@@ -494,7 +494,130 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_nextButtonActionPerformed
 
     private void newButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newButtonActionPerformed
+        addnew();
         
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newButtonActionPerformed
+
+    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
+        delete();
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_deleteButtonActionPerformed
+
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+        // TODO add your handling code here:
+        delete();
+        addnew();
+        
+    }//GEN-LAST:event_saveButtonActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(MainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(MainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(MainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(MainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new MainWindow().setVisible(true);
+            }
+        });
+    }
+    
+    private static void openConnection(String url) {
+        try {
+            // create a connection to the database
+            conn = DriverManager.getConnection(
+                url, // JDBC URL
+                "SA", // username
+                "");
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.exit(1);
+        }
+    }
+    
+    private void delete(){
+        try {
+            // load and register the JDBC driver
+            Class.forName("org.hsqldb.jdbc.JDBCDriver");
+        } catch (ClassNotFoundException ex) {
+            System.err.println("Driver could not be loaded. Exiting.");
+            System.exit(1);
+        }
+        
+         // create a connection to the database
+        try (Connection conn =
+                DriverManager.getConnection(
+                    "jdbc:hsqldb:file:sampledata", "SA", ""))
+        {
+            // Work with the database
+            System.out.println("Connection opened successfully!");
+            
+            // Create the statement object
+            Statement st = conn.createStatement();
+            //if(CurrentID != 0){CurrentID--;}
+            //else{CurrentID = 0;}
+            CurrentID = Integer.parseInt(customerIdTextField.getText());
+            
+            // Execute the SQL query
+            ResultSet rs = st.executeQuery("DELETE FROM Customers WHERE CustomerId = "+ CurrentID + ";");
+            
+            
+            // Loop through the rows
+            /*while (rs.next()) {
+                // Process one row of the data
+                int id = rs.getInt("CUSTOMERID");
+                
+                String fName = rs.getString("FIRSTNAME");
+                String lName = rs.getString("LASTNAME");
+                Date dob = rs.getDate("DOB");
+                customerIdTextField.setText(""+ id);
+                firstNameTextField.setText(fName);
+                lastNameTextField.setText(lName);
+                cityTextField.setText(rs.getString("CITY"));
+                stateTextField.setText(rs.getString("STATE"));
+                phoneNumberTextField.setText(rs.getString("PHONENUMBER"));
+                joinDateTextField.setText(rs.getString("JOINDATE"));
+                dobTextField.setText(rs.getString("DOB"));
+           
+            }*/
+            
+            
+            rs.close();
+            st.close();
+        } catch (SQLException ex) {
+            System.err.println("Something went wrong. :-(");
+            System.exit(1);
+        }
+        
+    }
+    
+    private void addnew(){
+    
         try {
             // load the JDBC driver class
             Class.forName("org.hsqldb.jdbc.JDBCDriver");
@@ -560,119 +683,8 @@ public class MainWindow extends javax.swing.JFrame {
             }
         }
         
-        
-        // TODO add your handling code here:
-    }//GEN-LAST:event_newButtonActionPerformed
-
-    private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
-        try {
-            // load and register the JDBC driver
-            Class.forName("org.hsqldb.jdbc.JDBCDriver");
-        } catch (ClassNotFoundException ex) {
-            System.err.println("Driver could not be loaded. Exiting.");
-            System.exit(1);
-        }
-        
-         // create a connection to the database
-        try (Connection conn =
-                DriverManager.getConnection(
-                    "jdbc:hsqldb:file:sampledata", "SA", ""))
-        {
-            // Work with the database
-            System.out.println("Connection opened successfully!");
-            
-            // Create the statement object
-            Statement st = conn.createStatement();
-            //if(CurrentID != 0){CurrentID--;}
-            //else{CurrentID = 0;}
-            CurrentID = Integer.parseInt(customerIdTextField.getText());
-            
-            // Execute the SQL query
-            ResultSet rs = st.executeQuery("DELETE FROM Customers WHERE CustomerId = "+ CurrentID + ";");
-            
-            
-            // Loop through the rows
-            /*while (rs.next()) {
-                // Process one row of the data
-                int id = rs.getInt("CUSTOMERID");
-                
-                String fName = rs.getString("FIRSTNAME");
-                String lName = rs.getString("LASTNAME");
-                Date dob = rs.getDate("DOB");
-                customerIdTextField.setText(""+ id);
-                firstNameTextField.setText(fName);
-                lastNameTextField.setText(lName);
-                cityTextField.setText(rs.getString("CITY"));
-                stateTextField.setText(rs.getString("STATE"));
-                phoneNumberTextField.setText(rs.getString("PHONENUMBER"));
-                joinDateTextField.setText(rs.getString("JOINDATE"));
-                dobTextField.setText(rs.getString("DOB"));
-           
-            }*/
-            
-            
-            rs.close();
-            st.close();
-        } catch (SQLException ex) {
-            System.err.println("Something went wrong. :-(");
-            System.exit(1);
-        }
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_deleteButtonActionPerformed
-
-    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_saveButtonActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainWindow().setVisible(true);
-            }
-        });
-    }
     
-    private static void openConnection(String url) {
-        try {
-            // create a connection to the database
-            conn = DriverManager.getConnection(
-                url, // JDBC URL
-                "SA", // username
-                "");
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            System.exit(1);
-        }
     }
-    
     private static void openStatement() {
         try {
             stat = conn.prepareStatement(

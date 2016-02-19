@@ -61,11 +61,13 @@ public class MainWindow extends javax.swing.JFrame {
         saveButton = new javax.swing.JButton();
         nextButton = new javax.swing.JButton();
         previousButton = new javax.swing.JButton();
+        clearFieldsButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        IntroLabel.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
-        IntroLabel.setText("This is to edit a database.");
+        IntroLabel.setFont(new java.awt.Font("Lucida Console", 0, 24)); // NOI18N
+        IntroLabel.setText("Customer Database Editor");
 
         firstNameLabel.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
         firstNameLabel.setText("First Name: ");
@@ -168,197 +170,112 @@ public class MainWindow extends javax.swing.JFrame {
             }
         });
 
+        clearFieldsButton.setFont(new java.awt.Font("Lucida Console", 0, 14)); // NOI18N
+        clearFieldsButton.setText("Clear Fields");
+        clearFieldsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearFieldsButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addContainerGap()
+                .addComponent(IntroLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(lastNameLabel)
+                .addComponent(cityLabel)
+                .addComponent(stateLabel)
+                .addComponent(customerIdLabel)
+                .addComponent(firstNameLabel)
+                .addComponent(phoneNumberLabel)
+                .addComponent(dobLabel)
+                .addComponent(joinDateLabel)
+                .addGroup(layout.createSequentialGroup()
+                    .addComponent(previousButton)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(initialReadButton)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(nextButton))
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(170, 170, 170)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(dobTextField)
+                        .addComponent(joinDateTextField)
+                        .addComponent(customerIdTextField)
+                        .addComponent(firstNameTextField)
+                        .addComponent(lastNameTextField)
+                        .addComponent(cityTextField)
+                        .addComponent(stateTextField)
+                        .addComponent(phoneNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(saveButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(clearFieldsButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(cityLabel)
-                                .addGap(61, 61, 61)
-                                .addComponent(cityTextField))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lastNameLabel)
-                                    .addComponent(firstNameLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(customerIdLabel))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(customerIdTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 249, Short.MAX_VALUE)
-                                    .addComponent(lastNameTextField)
-                                    .addComponent(firstNameTextField))))
-                        .addGap(12, 12, 12)
-                        .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(1, 1, 1)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(IntroLabel)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 123, Short.MAX_VALUE)
-                                .addComponent(deleteButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(newButton))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(phoneNumberLabel)
-                                    .addComponent(stateLabel))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(stateTextField)
-                                    .addComponent(phoneNumberTextField)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(joinDateLabel)
-                                        .addGap(43, 43, 43))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(dobLabel)
-                                        .addGap(69, 69, 69)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(dobTextField)
-                                    .addComponent(joinDateTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 152, Short.MAX_VALUE))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(initialReadButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(previousButton)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(nextButton))))))
+                        .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(newButton))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(IntroLabel)
-                        .addGap(5, 5, 5)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(customerIdLabel)
-                            .addComponent(customerIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(firstNameLabel)
-                            .addComponent(firstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(newButton)
-                            .addComponent(deleteButton))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(saveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addComponent(IntroLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(previousButton)
+                    .addComponent(initialReadButton)
+                    .addComponent(nextButton))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(customerIdLabel)
+                    .addComponent(customerIdTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lastNameLabel)
+                    .addComponent(firstNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(firstNameLabel)
                     .addComponent(lastNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(cityLabel)
                     .addComponent(cityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(stateLabel)
                     .addComponent(stateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(phoneNumberLabel)
                     .addComponent(phoneNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(joinDateLabel)
-                            .addComponent(joinDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(dobLabel)
-                            .addComponent(dobTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(49, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(nextButton)
-                            .addComponent(previousButton)
-                            .addComponent(initialReadButton)))))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(joinDateLabel)
+                    .addComponent(joinDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(dobLabel)
+                    .addComponent(dobTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(deleteButton)
+                    .addComponent(newButton))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(saveButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(clearFieldsButton, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void initialReadButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_initialReadButtonActionPerformed
-        //String msg = "Hello, " + firstNameTextField.getText();
-        //JOptionPane.showMessageDialog(this, msg);
-        
-        try {
-            // load and register the JDBC driver
-            Class.forName("org.hsqldb.jdbc.JDBCDriver");
-        } catch (ClassNotFoundException ex) {
-            System.err.println("Driver could not be loaded. Exiting.");
-            System.exit(1);
-        }
-        
-         // create a connection to the database
-        try (Connection conn =
-                DriverManager.getConnection(
-                    "jdbc:hsqldb:file:sampledata", "SA", ""))
-        {
-            // Work with the database
-            System.out.println("Connection opened successfully!");
-            
-            // Create the statement object
-            Statement st = conn.createStatement();
-            
-            // Execute the SQL query
-            ResultSet rs = st.executeQuery("SELECT * FROM Customers WHERE CustomerId = 0;");
-            
-            //System.out.println("<?xml version=\"1.0\"/>");
-            //System.out.println("<customers>");
-            
-            // Loop through the rows
-            while (rs.next()) {
-                // Process one row of the data
-                int id = rs.getInt("CUSTOMERID");
-                CurrentID = id;
-                String fName = rs.getString("FIRSTNAME");
-                String lName = rs.getString("LASTNAME");
-                //Date dob = rs.getDate("DOB");
-                customerIdTextField.setText(""+ id);
-                firstNameTextField.setText(fName);
-                lastNameTextField.setText(lName);
-                cityTextField.setText(rs.getString("CITY"));
-                stateTextField.setText(rs.getString("STATE"));
-                phoneNumberTextField.setText(rs.getString("PHONENUMBER"));
-                joinDateTextField.setText(rs.getString("JOINDATE"));
-                dobTextField.setText(rs.getString("DOB"));
-                /*
-                System.out.println(
-                        "  <customer>\n" +
-                        "    <customerid>" + (id + 1) + "</customerid>\n" +
-                        "    <firstname>" + fName + "</firstname>\n" +
-                        "    <lastname>" + lName + "</lastname>\n" +
-                        "    <birthdate>\n" +
-                        "      <year>" + dob.getYear() + "</year>\n" +
-                        "      <month>" + dob.getMonth() + "</month>\n" +
-                        "      <day>" + dob.getDay() + "</day>\n" +
-                        "    </birthdate>\n" +
-                        "  </customer>");*/
-            }
-            
-            //System.out.println("</customers>");
-            
-            rs.close();
-            st.close();
-        } catch (SQLException ex) {
-            System.err.println("Something went wrong. :-(");
-            System.exit(1);
-        }
-        
-        
-        
+        initEntry();
     }//GEN-LAST:event_initialReadButtonActionPerformed
 
     private void dobTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dobTextFieldActionPerformed
@@ -370,125 +287,12 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_joinDateTextFieldActionPerformed
 
     private void previousButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_previousButtonActionPerformed
-        try {
-            // load and register the JDBC driver
-            Class.forName("org.hsqldb.jdbc.JDBCDriver");
-        } catch (ClassNotFoundException ex) {
-            System.err.println("Driver could not be loaded. Exiting.");
-            System.exit(1);
-        }
-        
-         // create a connection to the database
-        try (Connection conn =
-                DriverManager.getConnection(
-                    "jdbc:hsqldb:file:sampledata", "SA", ""))
-        {
-            // Work with the database
-            System.out.println("Connection opened successfully!");
-            
-            // Create the statement object
-            Statement st = conn.createStatement();
-            if(CurrentID != 0){CurrentID--;}
-            else{CurrentID = 0;}
-            // Execute the SQL query
-            ResultSet rs = st.executeQuery("SELECT * FROM Customers WHERE CustomerId = "+ CurrentID + ";");
-            
-            //System.out.println("<?xml version=\"1.0\"/>");
-            //System.out.println("<customers>");
-            
-            // Loop through the rows
-            while (rs.next()) {
-                // Process one row of the data
-                int id = rs.getInt("CUSTOMERID");
-                String fName = rs.getString("FIRSTNAME");
-                String lName = rs.getString("LASTNAME");
-                Date dob = rs.getDate("DOB");
-                customerIdTextField.setText(""+ id);
-                firstNameTextField.setText(fName);
-                lastNameTextField.setText(lName);
-                cityTextField.setText(rs.getString("CITY"));
-                stateTextField.setText(rs.getString("STATE"));
-                phoneNumberTextField.setText(rs.getString("PHONENUMBER"));
-                joinDateTextField.setText(rs.getString("JOINDATE"));
-                dobTextField.setText(rs.getString("DOB"));
-                /*
-                System.out.println(
-                        "  <customer>\n" +
-                        "    <customerid>" + (id + 1) + "</customerid>\n" +
-                        "    <firstname>" + fName + "</firstname>\n" +
-                        "    <lastname>" + lName + "</lastname>\n" +
-                        "    <birthdate>\n" +
-                        "      <year>" + dob.getYear() + "</year>\n" +
-                        "      <month>" + dob.getMonth() + "</month>\n" +
-                        "      <day>" + dob.getDay() + "</day>\n" +
-                        "    </birthdate>\n" +
-                        "  </customer>");*/
-            }
-            
-            //System.out.println("</customers>");
-            
-            rs.close();
-            st.close();
-        } catch (SQLException ex) {
-            System.err.println("Something went wrong. :-(");
-            System.exit(1);
-        }
+        prevEntry();
 
-// TODO add your handling code here:
     }//GEN-LAST:event_previousButtonActionPerformed
 
     private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
- try {
-            // load and register the JDBC driver
-            Class.forName("org.hsqldb.jdbc.JDBCDriver");
-        } catch (ClassNotFoundException ex) {
-            System.err.println("Driver could not be loaded. Exiting.");
-            System.exit(1);
-        }
-        
-         // create a connection to the database
-        try (Connection conn =
-                DriverManager.getConnection(
-                    "jdbc:hsqldb:file:sampledata", "SA", ""))
-        {
-            // Work with the database
-            System.out.println("Connection opened successfully!");
-            
-            // Create the statement object
-            Statement st = conn.createStatement();
-            //if(CurrentID != 0){CurrentID--;}
-            //else{CurrentID = 0;}
-            CurrentID++;
-            // Execute the SQL query
-            ResultSet rs = st.executeQuery("SELECT * FROM Customers WHERE CustomerId = "+ CurrentID + ";");
-            
-            
-            // Loop through the rows
-            while (rs.next()) {
-                // Process one row of the data
-                int id = rs.getInt("CUSTOMERID");
-                
-                String fName = rs.getString("FIRSTNAME");
-                String lName = rs.getString("LASTNAME");
-                Date dob = rs.getDate("DOB");
-                customerIdTextField.setText(""+ id);
-                firstNameTextField.setText(fName);
-                lastNameTextField.setText(lName);
-                cityTextField.setText(rs.getString("CITY"));
-                stateTextField.setText(rs.getString("STATE"));
-                phoneNumberTextField.setText(rs.getString("PHONENUMBER"));
-                joinDateTextField.setText(rs.getString("JOINDATE"));
-                dobTextField.setText(rs.getString("DOB"));
-           
-            }
-            
-            
-            rs.close();
-            st.close();
-        } catch (SQLException ex) {
-            System.err.println("Something went wrong. :-(");
-            System.exit(1);
-        }
+        nextEntry();
 
         // TODO add your handling code here:
     }//GEN-LAST:event_nextButtonActionPerformed
@@ -501,7 +305,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         delete();
-
+        blankFields();
         // TODO add your handling code here:
     }//GEN-LAST:event_deleteButtonActionPerformed
 
@@ -511,6 +315,10 @@ public class MainWindow extends javax.swing.JFrame {
         addnew();
         
     }//GEN-LAST:event_saveButtonActionPerformed
+
+    private void clearFieldsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearFieldsButtonActionPerformed
+        blankFields();
+    }//GEN-LAST:event_clearFieldsButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -547,19 +355,6 @@ public class MainWindow extends javax.swing.JFrame {
         });
     }
     
-    private static void openConnection(String url) {
-        try {
-            // create a connection to the database
-            conn = DriverManager.getConnection(
-                url, // JDBC URL
-                "SA", // username
-                "");
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            System.exit(1);
-        }
-    }
-    
     private void delete(){
         try {
             // load and register the JDBC driver
@@ -579,34 +374,12 @@ public class MainWindow extends javax.swing.JFrame {
             
             // Create the statement object
             Statement st = conn.createStatement();
-            //if(CurrentID != 0){CurrentID--;}
-            //else{CurrentID = 0;}
+
             CurrentID = Integer.parseInt(customerIdTextField.getText());
             
             // Execute the SQL query
             ResultSet rs = st.executeQuery("DELETE FROM Customers WHERE CustomerId = "+ CurrentID + ";");
-            
-            
-            // Loop through the rows
-            /*while (rs.next()) {
-                // Process one row of the data
-                int id = rs.getInt("CUSTOMERID");
-                
-                String fName = rs.getString("FIRSTNAME");
-                String lName = rs.getString("LASTNAME");
-                Date dob = rs.getDate("DOB");
-                customerIdTextField.setText(""+ id);
-                firstNameTextField.setText(fName);
-                lastNameTextField.setText(lName);
-                cityTextField.setText(rs.getString("CITY"));
-                stateTextField.setText(rs.getString("STATE"));
-                phoneNumberTextField.setText(rs.getString("PHONENUMBER"));
-                joinDateTextField.setText(rs.getString("JOINDATE"));
-                dobTextField.setText(rs.getString("DOB"));
-           
-            }*/
-            
-            
+                        
             rs.close();
             st.close();
         } catch (SQLException ex) {
@@ -628,31 +401,6 @@ public class MainWindow extends javax.swing.JFrame {
         
         openConnection("jdbc:hsqldb:file:sampledata");
         openStatement();
-        
-        // get information from user
-        /*System.out.print("Enter ProductID: ");
-        int customerID = get.nextInt();
-        
-        System.out.print("Enter the product name: ");
-        userInput.nextLine();
-        String productName = userInput.nextLine();
-        
-        System.out.print("Enter the product price: ");
-        double price = userInput.nextDouble();
-        
-        System.out.print("Enter the product weight: ");
-        double weight = userInput.nextDouble();
-        
-        System.out.print("Enter the description: ");
-        userInput.nextLine();
-        String description = userInput.nextLine();
-        */
-        // create and output query
-        /*String query = "INSERT INTO Customer VALUES " +
-                    "(" + productID + ", '" + productName + "', " +
-                    price + ", " + weight + ", '" + description
-                    + "');";
-        *///System.out.println(query);
         
         try {
             // fill in the ?'s in the statement
@@ -685,6 +433,177 @@ public class MainWindow extends javax.swing.JFrame {
         
     
     }
+    
+    private void initEntry(){
+    
+        try {
+            // load and register the JDBC driver
+            Class.forName("org.hsqldb.jdbc.JDBCDriver");
+        } catch (ClassNotFoundException ex) {
+            System.err.println("Driver could not be loaded. Exiting.");
+            System.exit(1);
+        }
+        
+         // create a connection to the database
+        try (Connection conn =
+                DriverManager.getConnection(
+                    "jdbc:hsqldb:file:sampledata", "SA", ""))
+        {
+            // Work with the database
+            System.out.println("Connection opened successfully!");
+            
+            // Create the statement object
+            Statement st = conn.createStatement();
+            
+            // Execute the SQL query
+            ResultSet rs = st.executeQuery("SELECT * FROM Customers WHERE CustomerId = 0;");
+            
+            while (rs.next()) {
+                int id = rs.getInt("CUSTOMERID");
+                CurrentID = id;
+                String fName = rs.getString("FIRSTNAME");
+                String lName = rs.getString("LASTNAME");
+                //Date dob = rs.getDate("DOB");
+                customerIdTextField.setText(""+ id);
+                firstNameTextField.setText(fName);
+                lastNameTextField.setText(lName);
+                cityTextField.setText(rs.getString("CITY"));
+                stateTextField.setText(rs.getString("STATE"));
+                phoneNumberTextField.setText(rs.getString("PHONENUMBER"));
+                joinDateTextField.setText(rs.getString("JOINDATE"));
+                dobTextField.setText(rs.getString("DOB"));
+             }
+                
+            rs.close();
+            st.close();
+        } catch (SQLException ex) {
+            System.err.println("Something went wrong. :-(");
+            System.exit(1);
+        }
+    }
+    private void nextEntry(){
+        try {
+            // load and register the JDBC driver
+            Class.forName("org.hsqldb.jdbc.JDBCDriver");
+        } catch (ClassNotFoundException ex) {
+            System.err.println("Driver could not be loaded. Exiting.");
+            System.exit(1);
+        }
+        
+         // create a connection to the database
+        try (Connection conn =
+                DriverManager.getConnection(
+                    "jdbc:hsqldb:file:sampledata", "SA", ""))
+        {
+            // Work with the database
+            System.out.println("Connection opened successfully!");
+            
+            // Create the statement object
+            Statement st = conn.createStatement();
+
+            CurrentID++;
+            // Execute the SQL query
+            ResultSet rs = st.executeQuery("SELECT * FROM Customers WHERE CustomerId = "+ CurrentID + ";");
+            
+            
+            // Loop through the rows
+            while (rs.next()) {
+                // Process one row of the data
+                int id = rs.getInt("CUSTOMERID");
+                String fName = rs.getString("FIRSTNAME");
+                String lName = rs.getString("LASTNAME");
+                Date dob = rs.getDate("DOB");
+                customerIdTextField.setText(""+ id);
+                firstNameTextField.setText(fName);
+                lastNameTextField.setText(lName);
+                cityTextField.setText(rs.getString("CITY"));
+                stateTextField.setText(rs.getString("STATE"));
+                phoneNumberTextField.setText(rs.getString("PHONENUMBER"));
+                joinDateTextField.setText(rs.getString("JOINDATE"));
+                dobTextField.setText(rs.getString("DOB"));
+            }
+
+            rs.close();
+            st.close();
+        } catch (SQLException ex) {
+            System.err.println("Something went wrong. :-(");
+            System.exit(1);
+        }
+    }
+    private void prevEntry(){
+            try {
+            // load and register the JDBC driver
+            Class.forName("org.hsqldb.jdbc.JDBCDriver");
+        } catch (ClassNotFoundException ex) {
+            System.err.println("Driver could not be loaded. Exiting.");
+            System.exit(1);
+        }
+        
+         // create a connection to the database
+        try (Connection conn =
+                DriverManager.getConnection(
+                    "jdbc:hsqldb:file:sampledata", "SA", ""))
+        {
+            // Work with the database
+            System.out.println("Connection opened successfully!");
+            
+            // Create the statement object
+            Statement st = conn.createStatement();
+            if(CurrentID != 0){CurrentID--;}
+            else{CurrentID = 0;}
+            // Execute the SQL query
+            ResultSet rs = st.executeQuery("SELECT * FROM Customers WHERE CustomerId = "+ CurrentID + ";");
+           
+            // Loop through the rows
+            while (rs.next()) {
+                // Process one row of the data
+                int id = rs.getInt("CUSTOMERID");
+                String fName = rs.getString("FIRSTNAME");
+                String lName = rs.getString("LASTNAME");
+                Date dob = rs.getDate("DOB");
+                customerIdTextField.setText(""+ id);
+                firstNameTextField.setText(fName);
+                lastNameTextField.setText(lName);
+                cityTextField.setText(rs.getString("CITY"));
+                stateTextField.setText(rs.getString("STATE"));
+                phoneNumberTextField.setText(rs.getString("PHONENUMBER"));
+                joinDateTextField.setText(rs.getString("JOINDATE"));
+                dobTextField.setText(rs.getString("DOB"));
+                
+            }
+            
+            rs.close();
+            st.close();
+        } catch (SQLException ex) {
+            System.err.println("Something went wrong. :-(");
+            System.exit(1);
+        }
+    }
+    private void blankFields(){
+        customerIdTextField.setText("");
+        firstNameTextField.setText("");
+        lastNameTextField.setText("");
+        cityTextField.setText("");
+        stateTextField.setText("");
+        phoneNumberTextField.setText("");
+        joinDateTextField.setText("");
+        dobTextField.setText("");
+        
+    }
+    
+    private static void openConnection(String url) {
+        try {
+            // create a connection to the database
+            conn = DriverManager.getConnection(
+                url, // JDBC URL
+                "SA", // username
+                "");
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+            System.exit(1);
+        }
+    }
+    
     private static void openStatement() {
         try {
             stat = conn.prepareStatement(
@@ -707,6 +626,7 @@ public class MainWindow extends javax.swing.JFrame {
     private javax.swing.JLabel IntroLabel;
     private javax.swing.JLabel cityLabel;
     private javax.swing.JTextField cityTextField;
+    private javax.swing.JButton clearFieldsButton;
     private javax.swing.JLabel customerIdLabel;
     private javax.swing.JTextField customerIdTextField;
     private javax.swing.JButton deleteButton;

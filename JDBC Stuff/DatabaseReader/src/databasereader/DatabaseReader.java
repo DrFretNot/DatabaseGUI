@@ -38,8 +38,8 @@ public class DatabaseReader {
             // Execute the SQL query
             ResultSet rs = st.executeQuery("SELECT * FROM Customers");
             
-            System.out.println("<?xml version=\"1.0\"/>");
-            System.out.println("<customers>");
+            //System.out.println("<?xml version=\"1.0\"/>");
+            //System.out.println("<customers>");
             
             // Loop through the rows
             while (rs.next()) {
@@ -48,7 +48,7 @@ public class DatabaseReader {
                 String fName = rs.getString("FIRSTNAME");
                 String lName = rs.getString("LASTNAME");
                 Date dob = rs.getDate("DOB");
-                
+                /*
                 System.out.println(
                         "  <customer>\n" +
                         "    <customerid>" + (id + 1) + "</customerid>\n" +
@@ -59,10 +59,10 @@ public class DatabaseReader {
                         "      <month>" + dob.getMonth() + "</month>\n" +
                         "      <day>" + dob.getDay() + "</day>\n" +
                         "    </birthdate>\n" +
-                        "  </customer>");
+                        "  </customer>");*/
             }
             
-            System.out.println("</customers>");
+            //System.out.println("</customers>");
             
             rs.close();
             st.close();

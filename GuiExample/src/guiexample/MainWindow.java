@@ -6,6 +6,7 @@
 package guiexample;
 
 import java.sql.*;
+import javax.swing.UIManager;
 
 
 /**
@@ -14,6 +15,7 @@ import java.sql.*;
  */
 public class MainWindow extends javax.swing.JFrame {
     public int CurrentID;
+    public int MAXID;
     private static Connection conn = null;
     private static PreparedStatement stat = null;
     
@@ -64,6 +66,7 @@ public class MainWindow extends javax.swing.JFrame {
         clearFieldsButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(java.awt.Color.cyan);
         setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         IntroLabel.setFont(new java.awt.Font("Lucida Console", 0, 24)); // NOI18N
@@ -200,24 +203,25 @@ public class MainWindow extends javax.swing.JFrame {
                     .addComponent(initialReadButton)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(nextButton))
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(170, 170, 170)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(dobTextField)
-                        .addComponent(joinDateTextField)
-                        .addComponent(customerIdTextField)
-                        .addComponent(firstNameTextField)
-                        .addComponent(lastNameTextField)
-                        .addComponent(cityTextField)
-                        .addComponent(stateTextField)
-                        .addComponent(phoneNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(saveButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(clearFieldsButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(newButton))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(saveButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(clearFieldsButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(deleteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(newButton)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGap(170, 170, 170)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(dobTextField)
+                            .addComponent(joinDateTextField)
+                            .addComponent(customerIdTextField)
+                            .addComponent(firstNameTextField)
+                            .addComponent(lastNameTextField)
+                            .addComponent(cityTextField)
+                            .addComponent(stateTextField)
+                            .addComponent(phoneNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE)))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -292,6 +296,7 @@ public class MainWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_previousButtonActionPerformed
 
     private void nextButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextButtonActionPerformed
+        
         nextEntry();
 
         // TODO add your handling code here:
@@ -433,7 +438,50 @@ public class MainWindow extends javax.swing.JFrame {
         
     
     }
+    private void getMax(){
+    try {
+            // load and register the JDBC driver
+            Class.forName("org.hsqldb.jdbc.JDBCDriver");
+        } catch (ClassNotFoundException ex) {
+            System.err.println("Driver could not be loaded. Exiting.");
+            System.exit(1);
+        }
+        
+        // create a connection to the database
+        try (Connection conn =
+                DriverManager.getConnection(
+                    "jdbc:hsqldb:file:sampledata", "SA", ""))
+        {
+            // Work with the database
+            System.out.println("Connection opened successfully!");
+            
+            // Create the statement object
+            Statement st = conn.createStatement();
+            
+            // Execute the SQL query
+            ResultSet rs = st.executeQuery("SELECT * FROM Customers");
+   
+            // Loop through the rows
+            while (rs.next()) {
+                // Process one row of the data
+                int id = rs.getInt("CUSTOMERID");
+                MAXID = id;
+                String fName = rs.getString("FIRSTNAME");
+                String lName = rs.getString("LASTNAME");
+                Date dob = rs.getDate("DOB");
+                
+            }
+            
+            rs.close();
+            st.close();
+        } catch (SQLException ex) {
+            System.err.println("Something went wrong. :-(");
+            System.exit(1);
+        }
     
+    
+    
+    }
     private void initEntry(){
     
         try {
@@ -500,8 +548,9 @@ public class MainWindow extends javax.swing.JFrame {
             
             // Create the statement object
             Statement st = conn.createStatement();
-
-            CurrentID++;
+            getMax();
+            if (CurrentID == MAXID){ CurrentID = CurrentID;}
+            else{CurrentID++;}
             // Execute the SQL query
             ResultSet rs = st.executeQuery("SELECT * FROM Customers WHERE CustomerId = "+ CurrentID + ";");
             
